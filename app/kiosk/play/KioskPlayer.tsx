@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import LogoStamp from '@/components/kiosk/LogoStamp';
 import Copy from '@/components/kiosk/Copy';
-import ImageSequence from '@/components/kiosk/ImageSequence';
 import ProductGrid from '@/components/kiosk/ProductGrid';
 
 interface Scene {
@@ -18,7 +17,7 @@ interface Scene {
   sequencePattern?: string;
   frames?: number;
   data?: string;
-  config?: any;
+  config?: Record<string, unknown>;
 }
 
 interface Timeline {
@@ -52,7 +51,7 @@ function getSceneProgress(frame: number, scene: Scene, fps: number): number {
 export default function KioskPlayer({ timeline, variant }: KioskPlayerProps) {
   const [currentFrame, setCurrentFrame] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | undefined>(undefined);
   const lastTimeRef = useRef<number>(0);
 
   const totalFrames = timeline.canvas.fps * 30; // 30-second loop
@@ -142,8 +141,8 @@ export default function KioskPlayer({ timeline, variant }: KioskPlayerProps) {
           <Copy
             variant={variant}
             size="headline"
-            animation={currentScene.config?.animation || 'slideUp'}
-            gradient={variant === 'V2' && currentScene.config?.gradient}
+            animation={(currentScene.config?.animation as 'slideUp' | 'explode' | 'pulse' | 'breathe' | 'fade') || 'slideUp'}
+            gradient={variant === 'V2' && Boolean(currentScene.config?.gradient)}
           >
             {currentScene.text}
           </Copy>
@@ -257,10 +256,10 @@ export default function KioskPlayer({ timeline, variant }: KioskPlayerProps) {
             <ProductGrid
               dataPath={currentScene.data || '/data/new_arrivals_jordan.json'}
               variant={variant}
-              columns={currentScene.config?.columns || 2}
-              rows={currentScene.config?.rows || 3}
-              animationType={currentScene.config?.animationType || 'stagger'}
-              titleText={currentScene.config?.titleText}
+              columns={(currentScene.config?.columns as number) || 2}
+              rows={(currentScene.config?.rows as number) || 3}
+              animationType={(currentScene.config?.animationType as 'stagger' | 'wave' | 'fade') || 'stagger'}
+              titleText={currentScene.config?.titleText as string | undefined}
             />
           </div>
         );
@@ -279,8 +278,8 @@ export default function KioskPlayer({ timeline, variant }: KioskPlayerProps) {
             <Copy
               variant={variant}
               size="headline"
-              animation={currentScene.config?.animation || 'pulse'}
-              gradient={variant === 'V2' && currentScene.config?.gradientText}
+              animation={(currentScene.config?.animation as 'slideUp' | 'explode' | 'pulse' | 'breathe' | 'fade') || 'pulse'}
+              gradient={variant === 'V2' && Boolean(currentScene.config?.gradientText)}
             >
               {currentScene.text}
             </Copy>

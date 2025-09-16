@@ -1,6 +1,5 @@
 import LogoStamp from '@/components/kiosk/LogoStamp';
 import Copy from '@/components/kiosk/Copy';
-import ImageSequence from '@/components/kiosk/ImageSequence';
 import ProductGrid from '@/components/kiosk/ProductGrid';
 
 interface Scene {
@@ -15,7 +14,7 @@ interface Scene {
   sequencePattern?: string;
   frames?: number;
   data?: string;
-  config?: any;
+  config?: Record<string, unknown>;
 }
 
 interface Timeline {
@@ -89,8 +88,8 @@ export default function KioskFrame({ frame, variant, timeline }: KioskFrameProps
           <Copy
             variant={variant}
             size="headline"
-            animation={currentScene.config?.animation || 'slideUp'}
-            gradient={variant === 'V2' && currentScene.config?.gradient}
+            animation={(currentScene.config?.animation as 'slideUp' | 'explode' | 'pulse' | 'breathe' | 'fade') || 'slideUp'}
+            gradient={variant === 'V2' && Boolean(currentScene.config?.gradient)}
           >
             {currentScene.text}
           </Copy>
@@ -179,10 +178,10 @@ export default function KioskFrame({ frame, variant, timeline }: KioskFrameProps
             <ProductGrid
               dataPath={currentScene.data || '/data/new_arrivals_jordan.json'}
               variant={variant}
-              columns={currentScene.config?.columns || 2}
-              rows={currentScene.config?.rows || 3}
-              animationType={currentScene.config?.animationType || 'stagger'}
-              titleText={currentScene.config?.titleText}
+              columns={(currentScene.config?.columns as number) || 2}
+              rows={(currentScene.config?.rows as number) || 3}
+              animationType={(currentScene.config?.animationType as 'stagger' | 'wave' | 'fade') || 'stagger'}
+              titleText={currentScene.config?.titleText as string | undefined}
             />
           </div>
         );
@@ -200,8 +199,8 @@ export default function KioskFrame({ frame, variant, timeline }: KioskFrameProps
             <Copy
               variant={variant}
               size="headline"
-              animation={currentScene.config?.animation || 'pulse'}
-              gradient={variant === 'V2' && currentScene.config?.gradientText}
+              animation={(currentScene.config?.animation as 'slideUp' | 'explode' | 'pulse' | 'breathe' | 'fade') || 'pulse'}
+              gradient={variant === 'V2' && Boolean(currentScene.config?.gradientText)}
             >
               {currentScene.text}
             </Copy>

@@ -14,7 +14,7 @@ interface Scene {
   sequencePattern?: string;
   frames?: number;
   data?: string;
-  config?: any;
+  config?: Record<string, unknown>;
 }
 
 interface Timeline {
@@ -34,7 +34,7 @@ export default function PlayPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentFrame, setCurrentFrame] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | undefined>(undefined);
   const lastTimeRef = useRef<number>(0);
 
   useEffect(() => {

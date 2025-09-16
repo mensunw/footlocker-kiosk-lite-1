@@ -11,7 +11,7 @@ const execAsync = promisify(exec);
 // Configuration
 const CONFIG = {
   server: {
-    port: 3000,
+    port: 3000,  // Default development port
     host: 'localhost'
   },
   canvas: {

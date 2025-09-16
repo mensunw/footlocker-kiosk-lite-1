@@ -4,10 +4,10 @@ import path from 'path';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { variant: string } }
+  { params }: { params: Promise<{ variant: string }> }
 ) {
   try {
-    const { variant } = params;
+    const { variant } = await params;
 
     if (!['V1', 'V2'].includes(variant)) {
       return NextResponse.json(

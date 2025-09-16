@@ -2,12 +2,31 @@
 
 import { useState, useEffect } from 'react';
 
+interface Timeline {
+  canvas: {
+    width: number;
+    height: number;
+    fps: number;
+    bg: string;
+  };
+  scenes: Array<{
+    id: string;
+    start: number;
+    dur: number;
+    type: string;
+    text?: string;
+    slates?: string[];
+    headline?: string;
+    sub?: string;
+  }>;
+}
+
 export default function WorkingKioskPage() {
   const [currentFrame, setCurrentFrame] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [timeline, setTimeline] = useState(null);
+  const [timeline, setTimeline] = useState<Timeline | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   // Load timeline data
   useEffect(() => {
@@ -19,7 +38,7 @@ export default function WorkingKioskPage() {
         setTimeline(data);
         setLoading(false);
       } catch (err) {
-        setError(err.message);
+        setError(err instanceof Error ? err.message : 'An error occurred');
         setLoading(false);
       }
     };

@@ -119,13 +119,13 @@ Each variant uses JSON configuration files defining:
 ### Development
 ```bash
 npm run dev
-# Visit: http://localhost:3000/kiosk/play
+# Visit: /kiosk/play
 ```
 
 ### Key URLs
-- **Main Experience**: `http://localhost:3000/kiosk/play`
-- **Frame Preview**: `http://localhost:3000/kiosk/preview?frame=150&variant=V1`
-- **API Test**: `http://localhost:3000/api/timeline/V1`
+- **Main Experience**: `/kiosk/play`
+- **Frame Preview**: `/kiosk/preview?frame=150&variant=V1`
+- **API Test**: `/api/timeline/V1`
 
 ### Video Export (Optional)
 ```bash

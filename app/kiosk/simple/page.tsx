@@ -2,8 +2,24 @@
 
 import { useState, useEffect } from 'react';
 
+interface Timeline {
+  canvas: {
+    width: number;
+    height: number;
+    fps: number;
+    bg: string;
+  };
+  scenes: Array<{
+    id: string;
+    start: number;
+    dur: number;
+    type: string;
+    text?: string;
+  }>;
+}
+
 export default function SimpleKioskPage() {
-  const [timeline, setTimeline] = useState(null);
+  const [timeline, setTimeline] = useState<Timeline | null>(null);
   const [error, setError] = useState('');
 
   useEffect(() => {
