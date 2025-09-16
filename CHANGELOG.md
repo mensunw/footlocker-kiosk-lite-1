@@ -2,6 +2,26 @@
 
 All notable changes to the Foot Locker Kiosk Experience project are documented in this file.
 
+## [1.0.2] - 2025-09-16
+
+### Fixed
+- **Build compilation errors**: Resolved all TypeScript/ESLint errors for successful production builds
+  - Fixed Next.js 15 compatibility: Updated API route handler to await `params` Promise in `/app/api/timeline/[variant]/route.ts`
+  - Fixed `useRef` initialization errors: Added proper initial values to `useRef<number | undefined>(undefined)` in page components
+  - Fixed type safety issues: Replaced `any` types with `Record<string, unknown>` for better type safety
+  - Fixed component prop types: Added proper type assertions for animation and config props
+  - Fixed error handling: Updated catch blocks to handle `unknown` error types properly
+  - Added comprehensive TypeScript interfaces for Timeline and Scene objects across all components
+- **Removed unused imports**: Cleaned up unused `ImageSequence` imports from kiosk components
+- **Documentation cleanup**: Removed hardcoded port references from documentation
+  - Updated CLAUDE.md and README.md to use relative paths instead of `localhost:3000` URLs
+  - Added clarifying comment to build script port configuration
+
+### Changed
+- All kiosk components now have proper TypeScript typing with no `any` types
+- Build process now compiles successfully with only minor performance warnings
+- Documentation now uses environment-agnostic relative paths
+
 ## [1.0.1] - 2025-09-16
 
 ### Fixed
