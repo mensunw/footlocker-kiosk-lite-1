@@ -1,0 +1,177 @@
+.productGrid {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.title {
+  font-family: 'Bauhaus 93', 'Montserrat', Arial, sans-serif;
+  font-size: 64px;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0 0 60px 0;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  animation: titleFadeIn 1s ease-out 0.2s both;
+}
+
+.variantV2 .title {
+  background: linear-gradient(135deg, #ffffff 0%, #E01A2E 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 72px;
+}
+
+.grid {
+  display: grid;
+  gap: 30px;
+  height: 100%;
+}
+
+.productCard {
+  position: relative;
+  background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+  cursor: pointer;
+}
+
+.productCard.visible {
+  animation: cardSlideIn 0.8s ease-out both;
+}
+
+.variantV2 .productCard {
+  border-color: rgba(224, 26, 46, 0.2);
+  background: linear-gradient(135deg, #1a0000 0%, #000000 100%);
+}
+
+.productCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.variantV2 .productCard:hover {
+  border-color: rgba(224, 26, 46, 0.5);
+  box-shadow: 0 12px 40px rgba(224, 26, 46, 0.2);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(45deg, #f5f5f5 0%, #e0e0e0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productImage {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.productCard:hover .productImage {
+  transform: scale(1.1);
+}
+
+.productInfo {
+  padding: 20px;
+  text-align: center;
+}
+
+.productName {
+  font-family: 'Gotham', 'Roboto', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.productPrice {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #E01A2E;
+  margin: 0;
+}
+
+.variantV2 .productPrice {
+  background: linear-gradient(90deg, #E01A2E 0%, #ff4757 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(224, 26, 46, 0.9) 0%, rgba(0, 0, 0, 0.8) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.productCard:hover .overlay {
+  opacity: 1;
+}
+
+.shopNow {
+  font-family: 'Bauhaus 93', 'Montserrat', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 12px 24px;
+  border: 2px solid white;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.shopNow:hover {
+  background: white;
+  color: #E01A2E;
+  transform: scale(1.05);
+}
+
+@keyframes titleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

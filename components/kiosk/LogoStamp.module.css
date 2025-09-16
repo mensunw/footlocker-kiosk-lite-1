@@ -1,0 +1,55 @@
+.logoStamp {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  height: 100%;
+  padding: 60px;
+}
+
+.footlockerLogo {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: logoFadeIn 1s ease-out 0.2s forwards;
+}
+
+.optisignsLogo {
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  opacity: 0.7;
+  transform: scale(0.9);
+  animation: logoFadeIn 0.8s ease-out 0.8s forwards;
+}
+
+.variantV1 .footlockerLogo {
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+.variantV2 .footlockerLogo {
+  filter: drop-shadow(0 0 20px rgba(224, 26, 46, 0.4));
+  transform: scale(0.9);
+  animation: logoGlow 1s ease-out 0.2s forwards;
+}
+
+.variantV2 .optisignsLogo {
+  filter: drop-shadow(0 0 10px rgba(224, 26, 46, 0.2));
+}
+
+@keyframes logoFadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes logoGlow {
+  to {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 30px rgba(224, 26, 46, 0.6));
+  }
+}

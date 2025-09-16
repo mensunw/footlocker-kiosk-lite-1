@@ -1,0 +1,136 @@
+.copy {
+  font-family: 'Bauhaus 93', 'Montserrat', 'Gotham', 'Roboto', Arial, sans-serif;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  margin: 0;
+  padding: 0;
+}
+
+/* Size variants */
+.sizeHeadline {
+  font-size: 72px;
+}
+
+.sizeSubheadline {
+  font-size: 56px;
+}
+
+.sizeBody {
+  font-size: 40px;
+}
+
+.sizeCaption {
+  font-size: 36px;
+  line-height: 1.2;
+}
+
+/* Variant styles */
+.variantV1 {
+  font-weight: 900;
+}
+
+.variantV2 {
+  font-weight: 900;
+}
+
+.variantV2.sizeHeadline {
+  font-size: 80px;
+}
+
+.variantV2.sizeSubheadline {
+  font-size: 64px;
+}
+
+.variantV2.sizeBody {
+  font-size: 44px;
+}
+
+/* Gradient text */
+.gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #E01A2E 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animations */
+.animFade {
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.2s forwards;
+}
+
+.animSlideUp {
+  opacity: 0;
+  transform: translateY(60px);
+  animation: slideUp 1.2s ease-out 0.3s forwards;
+}
+
+.animExplode {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: explode 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s forwards;
+}
+
+.animPulse {
+  opacity: 0;
+  animation: pulse 2s ease-in-out 0.5s infinite;
+}
+
+.animBreathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes explode {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.9;
+  }
+}

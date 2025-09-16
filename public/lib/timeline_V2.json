@@ -1,0 +1,93 @@
+{
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "bg": "#000000"
+  },
+  "scenes": [
+    {
+      "id": "S1",
+      "start": 0,
+      "dur": 1.5,
+      "type": "brand",
+      "config": {
+        "style": "dynamic",
+        "logoScale": 1.2,
+        "fadeIn": 0.3,
+        "redAccent": true
+      }
+    },
+    {
+      "id": "S2",
+      "start": 1.5,
+      "dur": 2.5,
+      "type": "copy",
+      "text": "Step Into the Culture",
+      "config": {
+        "fontSize": "80px",
+        "fontWeight": "900",
+        "animation": "explode",
+        "gradient": true
+      }
+    },
+    {
+      "id": "S3",
+      "start": 4,
+      "dur": 4,
+      "type": "montage",
+      "slates": ["Own Your Style", "Don't Miss the Drop", "The Drop Never Stops"],
+      "config": {
+        "transitionType": "slide",
+        "slateDuration": 1.33,
+        "parallax": true,
+        "redAccents": true
+      }
+    },
+    {
+      "id": "S4",
+      "start": 8,
+      "dur": 5,
+      "type": "spin",
+      "headline": "Spin. Zoom. Explore.",
+      "sub": "Tap to take control. Interact with the latest sneaker in full 360°.",
+      "sequencePattern": "/assets/shoes/demo_#.png",
+      "frames": 36,
+      "config": {
+        "rotationSpeed": 1.5,
+        "headlineSize": "64px",
+        "subSize": "40px",
+        "particleEffects": true
+      }
+    },
+    {
+      "id": "S5",
+      "start": 13,
+      "dur": 6,
+      "type": "grid",
+      "data": "/data/new_arrivals_jordan.json",
+      "config": {
+        "columns": 2,
+        "rows": 3,
+        "animationType": "wave",
+        "titleText": "Fresh Jordan Arrivals",
+        "parallaxGrid": true,
+        "redHighlights": true
+      }
+    },
+    {
+      "id": "S6",
+      "start": 19,
+      "dur": 11,
+      "type": "cta",
+      "text": "Your Sneakers. Your Story. Your Foot Locker.",
+      "config": {
+        "fontSize": "72px",
+        "animation": "breathe",
+        "loopToStart": true,
+        "gradientText": true,
+        "extendedLoop": true
+      }
+    }
+  ]
+}

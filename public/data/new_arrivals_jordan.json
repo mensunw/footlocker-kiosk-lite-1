@@ -1,0 +1,32 @@
+[
+  {
+    "image": "/assets/shoes/jordan-1.png",
+    "name": "Air Jordan 1 Retro High",
+    "price": "$170"
+  },
+  {
+    "image": "/assets/shoes/jordan-4.png",
+    "name": "Air Jordan 4 Retro",
+    "price": "$200"
+  },
+  {
+    "image": "/assets/shoes/jordan-11.png",
+    "name": "Air Jordan 11 Retro",
+    "price": "$220"
+  },
+  {
+    "image": "/assets/shoes/jordan-12.png",
+    "name": "Air Jordan 12 Retro",
+    "price": "$200"
+  },
+  {
+    "image": "/assets/shoes/jordan-3.png",
+    "name": "Air Jordan 3 Retro",
+    "price": "$190"
+  },
+  {
+    "image": "/assets/shoes/jordan-5.png",
+    "name": "Air Jordan 5 Retro",
+    "price": "$190"
+  }
+]

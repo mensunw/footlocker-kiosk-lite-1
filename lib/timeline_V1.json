@@ -1,0 +1,84 @@
+{
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "bg": "#000000"
+  },
+  "scenes": [
+    {
+      "id": "S1",
+      "start": 0,
+      "dur": 2,
+      "type": "brand",
+      "config": {
+        "style": "minimal",
+        "logoScale": 1.0,
+        "fadeIn": 0.5
+      }
+    },
+    {
+      "id": "S2",
+      "start": 2,
+      "dur": 3,
+      "type": "copy",
+      "text": "Step Into the Culture",
+      "config": {
+        "fontSize": "72px",
+        "fontWeight": "900",
+        "animation": "slideUp"
+      }
+    },
+    {
+      "id": "S3",
+      "start": 5,
+      "dur": 5,
+      "type": "montage",
+      "slates": ["Own Your Style", "The Drop Never Stops"],
+      "config": {
+        "transitionType": "fade",
+        "slateDuration": 2.5
+      }
+    },
+    {
+      "id": "S4",
+      "start": 10,
+      "dur": 6,
+      "type": "spin",
+      "headline": "Spin. Zoom. Explore.",
+      "sub": "Tap to take control. Interact with the latest sneaker in full 360°.",
+      "sequencePattern": "/assets/shoes/demo_#.png",
+      "frames": 36,
+      "config": {
+        "rotationSpeed": 1.0,
+        "headlineSize": "56px",
+        "subSize": "36px"
+      }
+    },
+    {
+      "id": "S5",
+      "start": 16,
+      "dur": 7,
+      "type": "grid",
+      "data": "/data/new_arrivals_jordan.json",
+      "config": {
+        "columns": 2,
+        "rows": 3,
+        "animationType": "stagger",
+        "titleText": "Fresh Jordan Arrivals"
+      }
+    },
+    {
+      "id": "S6",
+      "start": 23,
+      "dur": 7,
+      "type": "cta",
+      "text": "Your Sneakers. Your Story. Your Foot Locker.",
+      "config": {
+        "fontSize": "64px",
+        "animation": "pulse",
+        "loopToStart": true
+      }
+    }
+  ]
+}
