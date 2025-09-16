@@ -548,20 +548,6 @@ export default function PlayPage() {
       }}>
         {renderScene()}
 
-        {/* Debug Info */}
-        <div style={{
-          position: 'absolute',
-          top: '20px',
-          left: '20px',
-          color: 'rgba(255, 255, 255, 0.5)',
-          fontSize: '12px',
-          fontFamily: 'monospace',
-          background: 'rgba(0, 0, 0, 0.5)',
-          padding: '8px',
-          borderRadius: '4px'
-        }}>
-          Frame: {currentFrame} | Scene: {currentScene?.id || 'none'} | Time: {timeInSeconds.toFixed(1)}s | Variant: {selectedVariant}
-        </div>
       </div>
 
       {/* Player Controls */}

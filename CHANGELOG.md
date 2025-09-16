@@ -2,6 +2,20 @@
 
 All notable changes to the Foot Locker Kiosk Experience project are documented in this file.
 
+## [1.0.1] - 2025-09-16
+
+### Fixed
+- **Logo visibility improvement**: Fixed Foot Locker logo display in kiosk interface
+  - Removed white background rectangle from `/public/assets/footlocker/Footlocker logo.svg`
+  - Changed all logo text and icon colors from black (`#0E1111`) to white (`#FFFFFF`) for proper visibility against black background
+- **Clean kiosk interface**: Removed debug information overlay
+  - Eliminated gray tracking display showing "Frame | Scene | Time | Variant" from main kiosk view
+  - Removed debug info from `/app/kiosk/play/page.tsx` for professional presentation
+
+### Changed
+- Logo now displays with white text and transparent background instead of black text on white background
+- Kiosk interface now shows only content without distracting debug overlays
+
 ## [1.0.0] - 2025-09-16
 
 ### Added

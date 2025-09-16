@@ -1,1 +1,2 @@
-Please read the CLAUDE.md file to understand this project, and the CHANGELOG.md file to understand what changes have been made thus far
+can you visually get rid of the gray stuff at the top tracking frame, scene, etc?
+- /Users/mensun/Desktop/Screenshot 2025-09-16 at 3.59.30 PM.png
