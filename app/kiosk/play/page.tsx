@@ -139,26 +139,41 @@ export default function PlayPage() {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            height: '100%'
+            height: '100%',
+            position: 'relative'
           }}>
             <div style={{
-              fontSize: '64px',
-              fontWeight: '900',
-              color: 'white',
-              marginBottom: '40px',
-              textTransform: 'uppercase',
-              fontFamily: 'Arial, sans-serif'
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}>
-              FOOT LOCKER
+              <img
+                src="/assets/footlocker/Footlocker logo.svg"
+                alt="Foot Locker"
+                style={{
+                  height: '80px',
+                  width: 'auto',
+                  filter: selectedVariant === 'V2'
+                    ? 'drop-shadow(0 0 20px rgba(224, 26, 46, 0.4))'
+                    : 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.3))'
+                }}
+              />
             </div>
             <div style={{
               position: 'absolute',
               bottom: '60px',
               right: '60px',
-              fontSize: '14px',
-              color: 'rgba(255, 255, 255, 0.7)'
+              opacity: 0.8
             }}>
-              OptiSigns
+              <img
+                src="/assets/optisigns/optisigns-logo.svg"
+                alt="OptiSigns"
+                style={{
+                  height: '25px',
+                  width: 'auto',
+                  opacity: 0.9
+                }}
+              />
             </div>
           </div>
         );
@@ -234,7 +249,7 @@ export default function PlayPage() {
               fontSize: '56px',
               fontWeight: '900',
               color: 'white',
-              marginBottom: '60px',
+              marginBottom: '40px',
               textTransform: 'uppercase',
               fontFamily: 'Arial, sans-serif'
             }}>
@@ -242,47 +257,60 @@ export default function PlayPage() {
             </div>
 
             <div style={{
-              width: '400px',
-              height: '400px',
+              width: '450px',
+              height: '450px',
               borderRadius: '20px',
               background: selectedVariant === 'V2'
                 ? 'linear-gradient(135deg, #2a0000 0%, #000000 100%)'
                 : 'linear-gradient(135deg, #1a1a1a 0%, #000000 100%)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '20px',
-              color: 'rgba(255, 255, 255, 0.8)',
               boxShadow: selectedVariant === 'V2'
                 ? '0 8px 32px rgba(224, 26, 46, 0.3)'
                 : '0 8px 32px rgba(0, 0, 0, 0.5)',
               position: 'relative',
               overflow: 'hidden',
-              marginBottom: '60px'
+              marginBottom: '40px',
+              border: '2px solid rgba(224, 26, 46, 0.3)'
             }}>
+              <iframe
+                src="https://assets.footlocker.com/s7viewers/html5/SpinViewer.html?asset=FLDM/314217794404_02&config=FLDM/SpinSet_light&serverUrl=https://assets.footlocker.com/is/image/&contenturl=https://assets.footlocker.com/is/content/"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  border: 'none',
+                  borderRadius: '18px'
+                }}
+                title="360° Sneaker Viewer"
+                allow="accelerometer; gyroscope"
+                loading="lazy"
+              />
+
+              {/* Overlay with tap instruction */}
               <div style={{
                 position: 'absolute',
-                width: '60px',
-                height: '60px',
-                border: '3px solid #E01A2E',
-                borderRadius: '50%',
-                borderTopColor: 'transparent',
-                animation: 'spin 2s linear infinite',
-                opacity: 0.8
-              }} />
-              <div style={{ marginTop: '20px', textAlign: 'center' }}>
-                <div>360° View</div>
-                <div style={{ fontSize: '16px', opacity: 0.6, marginTop: '4px' }}>
-                  Interactive
-                </div>
+                top: '10px',
+                left: '10px',
+                right: '10px',
+                background: 'rgba(0, 0, 0, 0.7)',
+                color: 'white',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                fontSize: '14px',
+                fontWeight: '600',
+                textAlign: 'center',
+                backdropFilter: 'blur(4px)',
+                pointerEvents: 'none'
+              }}>
+                👆 Click & Drag to Rotate • Scroll to Zoom
               </div>
             </div>
 
             <div style={{
-              fontSize: '36px',
-              color: 'rgba(255, 255, 255, 0.8)',
+              fontSize: '32px',
+              color: 'rgba(255, 255, 255, 0.9)',
               textAlign: 'center',
-              fontFamily: 'Arial, sans-serif'
+              fontFamily: 'Arial, sans-serif',
+              lineHeight: '1.3',
+              maxWidth: '400px'
             }}>
               {currentScene.sub}
             </div>
@@ -383,7 +411,7 @@ export default function PlayPage() {
               color: 'white',
               textTransform: 'uppercase',
               lineHeight: '0.9',
-              marginBottom: '100px',
+              marginBottom: '120px',
               fontFamily: 'Arial, sans-serif'
             }}>
               {currentScene.text}
@@ -392,13 +420,21 @@ export default function PlayPage() {
             <div style={{
               position: 'absolute',
               bottom: '80px',
-              fontSize: '32px',
-              fontWeight: '900',
-              color: 'white',
-              textTransform: 'uppercase',
-              fontFamily: 'Arial, sans-serif'
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}>
-              FOOT LOCKER
+              <img
+                src="/assets/footlocker/Footlocker logo.svg"
+                alt="Foot Locker"
+                style={{
+                  height: '50px',
+                  width: 'auto',
+                  filter: selectedVariant === 'V2'
+                    ? 'drop-shadow(0 0 15px rgba(224, 26, 46, 0.3))'
+                    : 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.2))'
+                }}
+              />
             </div>
           </div>
         );
